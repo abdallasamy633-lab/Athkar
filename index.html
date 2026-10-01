@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>المهندس عبدالله سامي | A.S.A</title>
+
+    <!-- ربط ملف الـ CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    A.S.A
+                </div>
+
+                <div>
+                    <h2>المهندس عبدالله سامي</h2>
+                    <span>ذكر • سكينة • طمأنينة</span>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <button class="nav-item active" data-section="home">
+                    🏠
+                    <span>الرئيسية</span>
+                </button>
+
+                <button class="nav-item" data-section="morning">
+                    ☀️
+                    <span>أذكار الصباح</span>
+                </button>
+
+                <button class="nav-item" data-section="evening">
+                    🌙
+                    <span>أذكار المساء</span>
+                </button>
+
+                <button class="nav-item" data-section="sleep">
+                    🛏️
+                    <span>أذكار النوم</span>
+                </button>
+
+                <button class="nav-item" data-section="afterPrayer">
+                    🕌
+                    <span>أذكار بعد الصلاة</span>
+                </button>
+
+                <button class="nav-item" data-section="prophets">
+                    🤲
+                    <span>أدعية الأنبياء</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-quote">
+
+                <p>
+                    ﴿ وَاذْكُر رَّبَّكَ كَثِيرًا ﴾
+                </p>
+
+                <small>
+                    سورة الأحزاب: 41
+                </small>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main">
+
+            <header class="topbar">
+
+                <div class="top-title">
+
+                    <strong>
+                        المهندس عبدالله سامي
+                    </strong>
+
+                    <span>
+                        A.S.A
+                    </span>
+
+                </div>
+
+                <button id="themeBtn" class="theme-btn">
+                    🌙
+                </button>
+
+            </header>
+
+
+            <!-- ================= HERO ================= -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ
+                    </p>
+
+                    <h1>
+                        مرحبًا بك في صفحة الأذكار
+                    </h1>
+
+                    <p>
+                        اجعل لسانك رطبًا بذكر الله،
+                        واجعل قلبك مطمئنًا بذكره.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-logo">
+                    A.S.A
+                </div>
+
+            </section>
+
+
+            <!-- ================= HOME ================= -->
+
+            <section id="homeView" class="view">
+
+                <div class="section-heading">
+
+                    <h2>
+                        ابدأ رحلتك
+                    </h2>
+
+                    <p>
+                        اختر القسم الذي تريد قراءته
+                    </p>
+
+                </div>
+
+
+                <div id="categoryGrid" class="category-grid">
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DHIKR ================= -->
+
+            <section id="dhikrView" class="view hidden">
+
+                <div class="progress-row">
+
+                    <div>
+
+                        <span id="sectionBadge" class="badge">
+                            أذكار الصباح
+                        </span>
+
+                        <span id="counterText">
+                            1 من 1
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress">
+
+                        <span id="progressBar"></span>
+
+                    </div>
+
+                </div>
+
+
+                <article class="dhikr-card">
+
+                    <button id="prevBtn" class="round-btn">
+                        ‹
+                    </button>
+
+
+                    <div class="dhikr-inner">
+
+                        <div id="dhikrNumber" class="dhikr-number">
+                            01
+                        </div>
+
+
+                        <h2 id="dhikrText">
+                        </h2>
+
+
+                        <p id="dhikrSource" class="source">
+                        </p>
+
+
+                        <div class="repeat-box">
+
+                            <span>
+                                عدد التكرار
+                            </span>
+
+                            <strong id="repeatCount">
+                                1
+                            </strong>
+
+                        </div>
+
+
+                        <div class="actions">
+
+                            <button id="copyBtn" class="outline-btn">
+                                📋 نسخ الذكر
+                            </button>
+
+
+                            <button id="doneBtn" class="done-btn">
+                                تم الذكر ✓
+                            </button>
+
+
+                            <button id="shareBtn" class="outline-btn">
+                                ↗ مشاركة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <button id="nextBtn" class="round-btn">
+                        ›
+                    </button>
+
+                </article>
+
+
+                <p class="mini-note">
+                    عند الضغط على «تم الذكر» سيتم الانتقال تلقائيًا إلى الذكر التالي.
+                </p>
+
+            </section>
+
+
+            <!-- ================= FOOTER ================= -->
+
+            <footer>
+
+                <span>
+                    المهندس عبدالله سامي — A.S.A
+                </span>
+
+                <span>
+                    اللهم اجعل هذا العمل خالصًا لوجهك الكريم 🤍
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

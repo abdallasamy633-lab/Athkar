@@ -1,508 +1,180 @@
-// ==============================
-// A.S.A - أذكار المهندس عبدالله سامي
-// ==============================
-
-const data = {
-    morning: {
-        name: "أذكار الصباح",
-        icon: "☀️",
-        items: [
-            {
-                text: "رَضِيتُ بِاللَّهِ رَبًّا، وَبِالإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.",
-                source: "أبو داود والترمذي",
-                repeat: 3
-            },
-            {
-                text: "حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ.",
-                source: "سورة التوبة: 129",
-                repeat: 7
-            },
-            {
-                text: "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.",
-                source: "رواه مسلم",
-                repeat: 100
-            }
-        ]
-    },
-
-    evening: {
-        name: "أذكار المساء",
-        icon: "🌙",
-        items: [
-            {
-                text: "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.",
-                source: "رواه مسلم",
-                repeat: 3
-            },
-            {
-                text: "رَضِيتُ بِاللَّهِ رَبًّا، وَبِالإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا.",
-                source: "أبو داود والترمذي",
-                repeat: 3
-            },
-            {
-                text: "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.",
-                source: "رواه مسلم",
-                repeat: 100
-            }
-        ]
-    },
-
-    sleep: {
-        name: "أذكار النوم",
-        icon: "🛏️",
-        items: [
-            {
-                text: "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.",
-                source: "رواه البخاري",
-                repeat: 1
-            },
-            {
-                text: "سُبْحَانَ اللَّهِ.",
-                source: "رواه البخاري ومسلم",
-                repeat: 33
-            },
-            {
-                text: "الْحَمْدُ لِلَّهِ.",
-                source: "رواه البخاري ومسلم",
-                repeat: 33
-            },
-            {
-                text: "اللَّهُ أَكْبَرُ.",
-                source: "رواه البخاري ومسلم",
-                repeat: 34
-            }
-        ]
-    },
-
-    afterPrayer: {
-        name: "أذكار بعد الصلاة",
-        icon: "🕌",
-        items: [
-            {
-                text: "أَسْتَغْفِرُ اللَّهَ.",
-                source: "رواه مسلم",
-                repeat: 3
-            },
-            {
-                text: "اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالإِكْرَامِ.",
-                source: "رواه مسلم",
-                repeat: 1
-            },
-            {
-                text: "سُبْحَانَ اللَّهِ.",
-                source: "رواه مسلم",
-                repeat: 33
-            },
-            {
-                text: "الْحَمْدُ لِلَّهِ.",
-                source: "رواه مسلم",
-                repeat: 33
-            },
-            {
-                text: "اللَّهُ أَكْبَرُ.",
-                source: "رواه مسلم",
-                repeat: 33
-            }
-        ]
-    },
-
-    prophets: {
-        name: "أدعية الأنبياء",
-        icon: "🤲",
-        items: [
-            {
-                text: "رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي.",
-                source: "سورة طه: 25–26",
-                repeat: 1
-            },
-            {
-                text: "رَبِّ زِدْنِي عِلْمًا.",
-                source: "سورة طه: 114",
-                repeat: 1
-            },
-            {
-                text: "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ.",
-                source: "سورة الأعراف: 23",
-                repeat: 1
-            },
-            {
-                text: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ.",
-                source: "سورة الأنبياء: 87",
-                repeat: 1
-            },
-            {
-                text: "رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ.",
-                source: "سورة القصص: 24",
-                repeat: 1
-            },
-            {
-                text: "رَبِّ هَبْ لِي مِنْ لَدُنْكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ.",
-                source: "سورة آل عمران: 38",
-                repeat: 1
-            }
-        ]
-    }
+// قاعدة بيانات الأذكار
+const azkarData = {
+    sabah: [
+        { text: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ...", count: 1, source: "آية الكرسي" },
+        { text: "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ...", count: 1, source: "رواه مسلم" },
+        { text: "اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ...", count: 1, source: "سيد الاستغفار" },
+        { text: "رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا.", count: 3, source: "رواه أبو داود" },
+        { text: "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ: عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ.", count: 3, source: "رواه مسلم" }
+    ],
+    masea: [
+        { text: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...", count: 1, source: "آية الكرسي" },
+        { text: "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ...", count: 1, source: "رواه مسلم" },
+        { text: "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.", count: 3, source: "رواه مسلم" },
+        { text: "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ.", count: 1, source: "رواه الترمذي" }
+    ],
+    nom: [
+        { text: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...", count: 1, source: "آية الكرسي" },
+        { text: "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ...", count: 1, source: "رواه البخاري" },
+        { text: "اللَّهُمَّ خَلَقْتَ نَفْسِي وَأَنْتَ تَتَوَفَّاهَا، لَكَ مَمَاتُهَا وَمَحْيَاهَا...", count: 1, source: "رواه مسلم" },
+        { text: "اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.", count: 3, source: "رواه أبو داود" }
+    ],
+    salah: [
+        { text: "أَسْتَغْفِرُ اللَّهَ (ثَلاَثاً)... اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ، تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَالإِكْرَامِ.", count: 1, source: "رواه مسلم" },
+        { text: "سُبْحَانَ اللَّهِ (33)، الْحَمْدُ لِلَّهِ (33)، اللَّهُ أَكْبَرُ (33).", count: 33, source: "رواه مسلم" },
+        { text: "لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.", count: 1, source: "تمام المائة" }
+    ],
+    anbiya: [
+        { text: "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ.", count: 1, source: "سيدنا آدم عليه السلام" },
+        { text: "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي.", count: 1, source: "سيدنا موسى عليه السلام" },
+        { text: "لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ.", count: 1, source: "سيدنا يونس عليه السلام" },
+        { text: "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنْتَ خَيْرُ الْوَارِثِينَ.", count: 1, source: "سيدنا زكريا عليه السلام" }
+    ]
 };
 
-
-// ==============================
-// المتغيرات
-// ==============================
-
-let currentSection = "morning";
+let currentCategory = 'sabah';
 let currentIndex = 0;
+let currentCount = 0;
+let masbahaCount = 0;
 
-
-// ==============================
-// عناصر الصفحة
-// ==============================
-
-const homeView = document.getElementById("homeView");
-const dhikrView = document.getElementById("dhikrView");
-const categoryGrid = document.getElementById("categoryGrid");
-
-
-// ==============================
-// كروت الأقسام
-// ==============================
-
-const categories = [
-    {
-        id: "morning",
-        icon: "☀️",
-        name: "أذكار الصباح",
-        description: "ابدأ يومك بذكر الله"
-    },
-    {
-        id: "evening",
-        icon: "🌙",
-        name: "أذكار المساء",
-        description: "اختم يومك بذكر الله"
-    },
-    {
-        id: "sleep",
-        icon: "🛏️",
-        name: "أذكار النوم",
-        description: "أذكار قبل النوم"
-    },
-    {
-        id: "afterPrayer",
-        icon: "🕌",
-        name: "أذكار بعد الصلاة",
-        description: "أذكار ما بعد الصلاة"
-    },
-    {
-        id: "prophets",
-        icon: "🤲",
-        name: "أدعية الأنبياء",
-        description: "أدعية من القرآن الكريم"
-    }
-];
-
-
-function renderCategories() {
-
-    categoryGrid.innerHTML = "";
-
-    categories.forEach(function(category) {
-
-        const card = document.createElement("button");
-
-        card.className = "category";
-
-        card.innerHTML =
-            '<div class="category-icon">' +
-            category.icon +
-            '</div>' +
-            '<h3>' +
-            category.name +
-            '</h3>' +
-            '<p>' +
-            category.description +
-            '</p>';
-
-        card.addEventListener("click", function() {
-            openSection(category.id);
-        });
-
-        categoryGrid.appendChild(card);
-    });
-}
-
-
-// ==============================
-// فتح قسم الأذكار
-// ==============================
-
-function openSection(section) {
-
-    currentSection = section;
-    currentIndex = 0;
-
-    homeView.classList.add("hidden");
-    dhikrView.classList.remove("hidden");
-
-    updateNavigation(section);
-    renderDhikr();
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-// ==============================
-// الرئيسية
-// ==============================
-
-function showHome() {
-
-    homeView.classList.remove("hidden");
-    dhikrView.classList.add("hidden");
-
-    updateNavigation("home");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-// ==============================
-// القائمة الجانبية
-// ==============================
-
-function updateNavigation(section) {
-
-    document.querySelectorAll(".nav-item").forEach(function(button) {
-
-        button.classList.remove("active");
-
-        if (button.dataset.section === section) {
-            button.classList.add("active");
-        }
-
-    });
-}
-
-
-document.querySelectorAll(".nav-item").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const section = button.dataset.section;
-
-        if (section === "home") {
-            showHome();
-        } else {
-            openSection(section);
-        }
-
-    });
-
+// Dark Mode Toggle
+document.getElementById('themeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
 });
 
+// التنقل بين الأقسام
+function switchTab(tabId) {
+    document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
-// ==============================
-// عرض الذكر الحالي
-// ==============================
-
-function renderDhikr() {
-
-    const group = data[currentSection];
-    const item = group.items[currentIndex];
-
-    document.getElementById("sectionBadge").textContent =
-        group.icon + " " + group.name;
-
-    document.getElementById("counterText").textContent =
-        (currentIndex + 1) + " من " + group.items.length;
-
-    const progress =
-        ((currentIndex + 1) / group.items.length) * 100;
-
-    document.getElementById("progressBar").style.width =
-        progress + "%";
-
-    document.getElementById("dhikrNumber").textContent =
-        String(currentIndex + 1).padStart(2, "0");
-
-    document.getElementById("dhikrText").textContent =
-        item.text;
-
-    document.getElementById("dhikrSource").textContent =
-        item.source;
-
-    document.getElementById("repeatCount").textContent =
-        item.repeat;
-
-    document.getElementById("prevBtn").disabled =
-        currentIndex === 0;
-
-    document.getElementById("nextBtn").disabled =
-        currentIndex === group.items.length - 1;
-}
-
-
-// ==============================
-// الذكر التالي
-// ==============================
-
-function nextDhikr() {
-
-    const group = data[currentSection];
-
-    if (currentIndex < group.items.length - 1) {
-
-        currentIndex++;
-
-        renderDhikr();
-
+    if (azkarData[tabId]) {
+        currentCategory = tabId;
+        currentIndex = 0;
+        loadZekr();
+        document.getElementById('azkarView').classList.add('active');
     } else {
-
-        alert("ما شاء الله، أتممت هذا القسم 🤍");
-
+        document.getElementById(tabId + 'View').classList.add('active');
     }
 }
 
+// الأذكار
+function loadZekr() {
+    const data = azkarData[currentCategory];
+    if (!data || data.length === 0) return;
 
-// ==============================
-// الذكر السابق
-// ==============================
+    const item = data[currentIndex];
+    document.getElementById('zekrText').textContent = item.text;
+    document.getElementById('zekrSource').textContent = item.source;
+    document.getElementById('azkarProgress').textContent = `${currentIndex + 1} من ${data.length}`;
+    currentCount = item.count;
+    document.getElementById('zekrCount').textContent = currentCount;
+}
 
-function previousDhikr() {
+function countDown() {
+    if (currentCount > 0) {
+        currentCount--;
+        document.getElementById('zekrCount').textContent = currentCount;
+        if (currentCount === 0) nextZekr();
+    }
+}
 
+function nextZekr() {
+    const data = azkarData[currentCategory];
+    if (currentIndex < data.length - 1) {
+        currentIndex++;
+        loadZekr();
+    }
+}
+
+function prevZekr() {
     if (currentIndex > 0) {
-
         currentIndex--;
-
-        renderDhikr();
-
+        loadZekr();
     }
 }
 
+function copyZekr() {
+    navigator.clipboard.writeText(document.getElementById('zekrText').textContent);
+    alert('تم نسخ الذكر بنجاح!');
+}
 
-// ==============================
-// أزرار التالي والسابق
-// ==============================
+// القرآن الكريم API
+async function loadSurahs() {
+    const list = document.getElementById('surahList');
+    list.innerHTML = 'جاري تحميل السور...';
 
-document.getElementById("nextBtn").addEventListener(
-    "click",
-    nextDhikr
-);
+    try {
+        const response = await fetch('https://api.alquran.cloud/v1/surah');
+        const data = await response.json();
+        list.innerHTML = '';
 
-document.getElementById("prevBtn").addEventListener(
-    "click",
-    previousDhikr
-);
-
-
-// ==============================
-// زر تم الذكر
-// ==============================
-
-document.getElementById("doneBtn").addEventListener(
-    "click",
-    nextDhikr
-);
-
-
-// ==============================
-// نسخ الذكر
-// ==============================
-
-document.getElementById("copyBtn").addEventListener(
-    "click",
-    async function() {
-
-        const text =
-            document.getElementById("dhikrText").textContent;
-
-        try {
-
-            await navigator.clipboard.writeText(text);
-
-            alert("تم نسخ الذكر ✓");
-
-        } catch (error) {
-
-            alert("تعذر النسخ.");
-
-        }
-
+        data.data.forEach(surah => {
+            const item = document.createElement('div');
+            item.className = 'surah-item';
+            item.innerHTML = `<strong>${surah.number}. ${surah.name}</strong>`;
+            item.onclick = () => loadSurahContent(surah.number, surah.name);
+            list.appendChild(item);
+        });
+    } catch (e) {
+        list.innerHTML = 'حدث خطأ أثناء تحميل السور، يرجى التأكد من الاتصال بالإنترنت.';
     }
-);
+}
 
+async function loadSurahContent(number, name) {
+    document.getElementById('surahTitle').textContent = name;
+    document.getElementById('surahContent').textContent = 'جاري جلب الآيات...';
+    document.getElementById('quranModal').style.display = 'flex';
 
-// ==============================
-// مشاركة الذكر
-// ==============================
+    try {
+        const response = await fetch(`https://api.alquran.cloud/v1/surah/${number}`);
+        const data = await response.json();
+        
+        let fullText = "";
+        data.data.ayahs.forEach(ayah => {
+            fullText += `${ayah.text} ﴿${ayah.numberInSurah}﴾ `;
+        });
 
-document.getElementById("shareBtn").addEventListener(
-    "click",
-    async function() {
+        document.getElementById('surahContent').textContent = fullText;
+    } catch (e) {
+        document.getElementById('surahContent').textContent = 'عذرًا، حدث خطأ في جلب النص.';
+    }
+}
 
-        const text =
-            document.getElementById("dhikrText").textContent;
+function closeQuran() {
+    document.getElementById('quranModal').style.display = 'none';
+}
 
-        try {
+function filterSurahs() {
+    const input = document.getElementById('surahSearch').value.toLowerCase();
+    document.querySelectorAll('.surah-item').forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(input) ? 'block' : 'none';
+    });
+}
 
-            if (navigator.share) {
-
-                await navigator.share({
-                    title: "A.S.A | أذكار",
-                    text: text
-                });
-
-            } else {
-
-                await navigator.clipboard.writeText(text);
-
-                alert("تم نسخ الذكر للمشاركة ✓");
-
+// البوصلة
+function initCompass() {
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', e => {
+            if (e.alpha !== null) {
+                document.getElementById('compassArrow').style.transform = `rotate(${e.alpha}deg)`;
+                document.getElementById('compassStatus').textContent = `الاتجاه: ${Math.round(e.alpha)}°`;
             }
-
-        } catch (error) {
-
-            console.log("تم إلغاء المشاركة.");
-
-        }
-
+        });
+    } else {
+        document.getElementById('compassStatus').textContent = "خاصية الاتجاه غير مدعومة مباشرة هنا.";
     }
-);
+}
 
+// المسبحة
+function incrementMasbaha() {
+    masbahaCount++;
+    document.getElementById('counterDisplay').textContent = masbahaCount;
+}
 
-// ==============================
-// الوضع الليلي
-// ==============================
+function resetMasbaha() {
+    masbahaCount = 0;
+    document.getElementById('counterDisplay').textContent = masbahaCount;
+}
 
-document.getElementById("themeBtn").addEventListener(
-    "click",
-    function() {
-
-        document.body.classList.toggle("dark");
-
-        const button =
-            document.getElementById("themeBtn");
-
-        if (document.body.classList.contains("dark")) {
-
-            button.textContent = "☀️";
-
-        } else {
-
-            button.textContent = "🌙";
-
-        }
-
-    }
-);
-
-
-// ==============================
-// تشغيل الموقع
-// ==============================
-
-renderCategories();
+// تشغيل جلب السور فور الفتح
+loadSurahs();
